@@ -161,7 +161,10 @@ def payout(msg):
         save_json(SHOT_FILE, shot_requests)
 
         bot.send_message(msg.chat.id, "✅ SHOT so‘rovingiz qabul qilindi. Tez orada siz bilan bog‘lanamiz.")
-        bot.send_message(ADMIN_ID, f"💸 @{msg.from_user.username if msg.from_user.username else "Noma'lum" SHOT so‘radi! Telegram ID: {msg.chat.id}")
+        bot.send_message(
+    ADMIN_ID,
+    f"💸 @{msg.from_user.username if msg.from_user.username else 'Noma\'lum'} SHOT so‘radi! Telegram ID: {msg.chat.id}"
+        )
 
     else:
         bot.send_message(msg.chat.id, "❌ SHOT uchun kamida 20 000 so‘m kerak.")
